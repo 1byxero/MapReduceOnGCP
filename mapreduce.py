@@ -150,7 +150,7 @@ class Master(object):
 			s = self.get_xml_rpc_client(mapper_ip, PORT_CONSTANT)
 			num = s.start_mapper(
 				ipkeys, ix, self.reducer_count, 
-				mapper_ip, PORT_CONSTANT
+				self.kvstore_ip, self.kvstore_port
 			)
 			mapper_process_objs.append((mapper_ip, num))
 		return mapper_process_objs
@@ -178,7 +178,7 @@ class Master(object):
 			reducer_ip = self.worker_lookup[reducer_name]
 			s = self.get_xml_rpc_client(reducer_ip, PORT_CONSTANT)
 			num = s.start_reducer(
-				reducer_id, reducer_ip, PORT_CONSTANT
+				reducer_id, self.kvstore_ip, self.kvstore_port
 			)
 			reducers_process_objs.append((reducer_ip, num))
 
@@ -253,7 +253,7 @@ class Master(object):
 					'http://{}:{}'.format(ip, port)
 				)
 				client_started = s.poll()
-				print("{}:{} has started".format(ip, port))
+				print("{}:{} is online".format(ip, port))
 				return s
 			except ConnectionRefusedError:
 				pass
