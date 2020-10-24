@@ -228,7 +228,11 @@ class Master(object):
 		for key in keys_to_read:
 			value = sock.handle_get(key)
 			value = value[0] if value else None
-			print("key: {}, value: {}".format(key, value))
+			print(
+				"key: {}, value: {}".format(
+					key.replace('reducer_op_for_', ''), value
+				)
+			)
 
 
 parser = argparse.ArgumentParser()

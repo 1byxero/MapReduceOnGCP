@@ -108,7 +108,7 @@ class Mapper(object):
     def _create_local_map_fn(self, contents):
         with open('mapfn{}.py'.format(self.mapper_number), 'w') as f:
             f.write(contents)
-        os.system('chmod +x mapfn{}.py'.format(self.reducer_number))
+        os.system('chmod +x mapfn{}.py'.format(self.mapper_number))
 
 
     def _delete_local_map_fn(self):
