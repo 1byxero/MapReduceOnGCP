@@ -44,11 +44,15 @@ def check_if_reducer_done(reducer_number):
             #maybe zombie?: TODO handle this
             return None
     return None
+
+def poll():
+    return True
     
 
 server = SimpleXMLRPCServer((args.reducer_rpc_ip, args.reducer_rpc_port))
 server.register_introspection_functions()
 server.register_function(start_reducer)
 server.register_function(check_if_reducer_done)
+server.register_function(poll)
 # Run the server's main loop
 server.serve_forever()

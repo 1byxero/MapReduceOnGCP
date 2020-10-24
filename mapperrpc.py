@@ -46,11 +46,14 @@ def check_if_mapper_done(mapper_number):
             #maybe zombie?: TODO handle this
             return None
     return None
-    
+
+def poll():
+    return True
 
 server = SimpleXMLRPCServer((args.mapper_rpc_ip, args.mapper_rpc_port))
 server.register_introspection_functions()
 server.register_function(start_mapper)
 server.register_function(check_if_mapper_done)
+server.register_function(poll)
 # Run the server's main loop
 server.serve_forever()

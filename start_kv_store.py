@@ -22,9 +22,13 @@ rpc = True
 # -----------------------------------RPC-----------------------------------#
 obj = key_val_store(args.kvstore_ip, args.kvstore_port, rpc=rpc)
 
+def poll():
+    return True
+
 server = SimpleXMLRPCServer((args.kvstore_ip, args.kvstore_port))
 server.register_introspection_functions()
 server.register_instance(obj)
+server.register_function(poll)
 # Run the server's main loop
 server.serve_forever()
 

@@ -107,6 +107,7 @@ class Master(object):
 	def _check_kv_store_rpc_is_up(self):
 		# verify kv store started:
 		kvstore_started = False
+		print("Checking if  kv store has started")
 		while not kvstore_started:
 			#Add limited retries
 			time.sleep(2)
@@ -245,6 +246,20 @@ class Master(object):
 				ip, port
 			)
 		)
+		client_started = False
+		print("Checking if {}:{} is online".format(ip, port))
+		while not client_started:
+			#Add limited retries
+			time.sleep(2)
+			try:
+				s = xmlrpc.client.ServerProxy(
+					'http://{}:{}'.format(ip, port)
+				)
+				client_started = s.poll()
+				print("{}:{} has started".format(ip, port))
+				return s
+			except ConnectionRefusedError:
+				pass
 
 
 
