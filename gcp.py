@@ -178,9 +178,6 @@ def delete_instances(instance_type, count):
                 compute, PROJECT, ZONE, operation['name']
             )
 
-    instances = list_instances()
-    print(instances)
-
 def get_ip_of_instances():
     lookup = {}
 
