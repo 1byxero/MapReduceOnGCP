@@ -34,9 +34,7 @@ class Master(object):
 
 	def __init__(
 			self, mapper_count, reducer_count, input_file, 
-			map_function_file, reduce_function_file, 
-			kvstore_ip, kvstore_port, mapper_service_ip,
-			mapper_service_port, reducer_service_ip, reducer_service_port,
+			map_function_file, reduce_function_file
 		):
 		#get input, mapper function, mapper count, reduce fuction reducer cout 
 		# self.kvstore_ip = kvstore_ip
@@ -284,41 +282,9 @@ parser.add_argument(
 	help='path to reduce function '
 )
 
-parser.add_argument(
-	'kvstore_ip', type = str,
-	help='ip to spawn the key value store'
-)
-
-parser.add_argument(
-	'kvstore_port', type = int,
-	help='port to spawn the key value store'
-)
-
-parser.add_argument(
-	'mapper_service_ip', type = str,
-	help='ip of mapper rpc service'
-)
-
-parser.add_argument(
-	'mapper_service_port', type = int,
-	help='port of mapper rpc service'
-)
-
-parser.add_argument(
-	'reducer_service_ip', type = str,
-	help='ip of reducer rpc service'
-)
-
-parser.add_argument(
-	'reducer_service_port', type = int,
-	help='port of reducer rpc service'
-)
-
 args = parser.parse_args()
 
 Master(
 	args.mapper_count, args.reducer_count, args.input_file,
-	args.map_function_file, args.reduce_function_file, 
-	args.kvstore_ip, args.kvstore_port, args.mapper_service_ip, 
-	args.mapper_service_port, args.reducer_service_ip, args.reducer_service_port, 
+	args.map_function_file, args.reduce_function_file
 )
