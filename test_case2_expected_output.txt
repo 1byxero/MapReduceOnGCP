@@ -1,0 +1,475 @@
+[STARTING] server is starting...
+[LISTENING] Server is listening on 127.0.0.1:8055
+wait_for_mappers_to_finish
+All Mappers done
+wait_for_reducers_to_finish
+look {'data/file2.txt'}
+data {'data/file1.txt', 'data/file2.txt'}
+via {'data/file1.txt'}
+with {'data/file1.txt', 'data/file2.txt'}
+machine {'data/file1.txt'}
+reducer {'data/file1.txt'}
+track {'data/file1.txt'}
+program {'data/file2.txt', 'data/file1.txt'}
+minimum {'data/file2.txt', 'data/file1.txt'}
+cloud {'data/file1.txt'}
+Master {'data/file1.txt'}
+expose {'data/file2.txt', 'data/file1.txt'}
+communication {'data/file1.txt', 'data/file2.txt'}
+addresses {'data/file2.txt', 'data/file1.txt'}
+master {'data/file1.txt', 'data/file2.txt'}
+conventional {'data/file1.txt'}
+userinteraction {'data/file1.txt'}
+number {'data/file1.txt'}
+coming {'data/file1.txt'}
+applications {'data/file2.txt', 'data/file1.txt'}
+At {'data/file2.txt', 'data/file1.txt'}
+filenames {'data/file1.txt'}
+passed {'data/file2.txt', 'data/file1.txt'}
+locations {'data/file2.txt', 'data/file1.txt'}
+part {'data/file2.txt', 'data/file1.txt'}
+node {'data/file2.txt', 'data/file1.txt'}
+a {'data/file2.txt', 'data/file1.txt'}
+int {'data/file1.txt', 'data/file2.txt'}
+webbrowser {'data/file1.txt', 'data/file2.txt'}
+includes {'data/file2.txt'}
+goal {'data/file1.txt'}
+does {'data/file1.txt'}
+longrunning {'data/file1.txt', 'data/file2.txt'}
+well {'data/file1.txt'}
+line {'data/file2.txt'}
+assignment {'data/file2.txt', 'data/file1.txt'}
+application {'data/file1.txt'}
+files {'data/file1.txt', 'data/file2.txt'}
+whose {'data/file2.txt', 'data/file1.txt'}
+entirely {'data/file1.txt'}
+Input {'data/file1.txt'}
+gets {'data/file1.txt'}
+instance {'data/file2.txt', 'data/file1.txt'}
+optional {'data/file2.txt', 'data/file1.txt'}
+networkbased {'data/file1.txt'}
+initclusteripaddress {'data/file1.txt', 'data/file2.txt'}
+designing {'data/file1.txt'}
+paper {'data/file2.txt'}
+is {'data/file2.txt', 'data/file1.txt'}
+keep {'data/file1.txt'}
+see {'data/file1.txt'}
+portnumbers {'data/file1.txt'}
+dataset {'data/file1.txt'}
+will {'data/file1.txt', 'data/file2.txt'}
+are {'data/file2.txt', 'data/file1.txt'}
+The {'data/file2.txt', 'data/file1.txt'}
+process {'data/file2.txt'}
+about {'data/file2.txt', 'data/file1.txt'}
+MapReduce {'data/file1.txt', 'data/file2.txt'}
+input {'data/file2.txt', 'data/file1.txt'}
+sockets {'data/file1.txt'}
+interact {'data/file1.txt', 'data/file2.txt'}
+file {'data/file2.txt', 'data/file1.txt'}
+machines {'data/file1.txt'}
+accept {'data/file1.txt'}
+additional {'data/file1.txt'}
+working {'data/file2.txt'}
+must {'data/file2.txt', 'data/file1.txt'}
+various {'data/file1.txt'}
+evaluating {'data/file2.txt'}
+cannot {'data/file2.txt'}
+think {'data/file1.txt', 'data/file2.txt'}
+following {'data/file1.txt'}
+Project {'data/file2.txt'}
+your {'data/file1.txt', 'data/file2.txt'}
+command {'data/file2.txt'}
+interface {'data/file1.txt', 'data/file2.txt'}
+list {'data/file1.txt'}
+also {'data/file2.txt'}
+node {'data/file2.txt', 'data/file1.txt'}
+this {'data/file2.txt', 'data/file1.txt'}
+Or {'data/file1.txt', 'data/file2.txt'}
+write {'data/file1.txt'}
+report {'data/file2.txt'}
+assignment {'data/file1.txt', 'data/file2.txt'}
+passed {'data/file2.txt', 'data/file1.txt'}
+log {'data/file2.txt'}
+program {'data/file1.txt', 'data/file2.txt'}
+guideline {'data/file1.txt'}
+numbers {'data/file2.txt'}
+destroyclusterclusterid {'data/file2.txt'}
+of {'data/file1.txt', 'data/file2.txt'}
+real {'data/file1.txt'}
+duedate {'data/file1.txt'}
+filepaths {'data/file2.txt'}
+too {'data/file1.txt'}
+outputs {'data/file2.txt'}
+known {'data/file1.txt', 'data/file2.txt'}
+external {'data/file2.txt', 'data/file1.txt'}
+implemented {'data/file1.txt'}
+webbrowser {'data/file2.txt', 'data/file1.txt'}
+then {'data/file1.txt'}
+from {'data/file1.txt', 'data/file2.txt'}
+your {'data/file1.txt', 'data/file2.txt'}
+Testing {'data/file2.txt'}
+longrunning {'data/file2.txt', 'data/file1.txt'}
+source {'data/file2.txt'}
+clusterid {'data/file2.txt', 'data/file1.txt'}
+Thus {'data/file1.txt'}
+function {'data/file1.txt'}
+You {'data/file2.txt', 'data/file1.txt'}
+that {'data/file1.txt', 'data/file2.txt'}
+operations {'data/file1.txt'}
+whose {'data/file1.txt', 'data/file2.txt'}
+user {'data/file1.txt', 'data/file2.txt'}
+be {'data/file2.txt', 'data/file1.txt'}
+distributed {'data/file1.txt'}
+communicate {'data/file1.txt'}
+hardcode {'data/file2.txt'}
+Other {'data/file2.txt'}
+included {'data/file2.txt'}
+main {'data/file2.txt'}
+through {'data/file2.txt', 'data/file1.txt'}
+for {'data/file2.txt', 'data/file1.txt'}
+on {'data/file1.txt'}
+replication {'data/file2.txt'}
+failures {'data/file2.txt'}
+based {'data/file1.txt'}
+You {'data/file1.txt', 'data/file2.txt'}
+use {'data/file1.txt', 'data/file2.txt'}
+explicit {'data/file1.txt'}
+all {'data/file2.txt', 'data/file1.txt'}
+design {'data/file2.txt'}
+can {'data/file2.txt', 'data/file1.txt'}
+storage {'data/file1.txt'}
+higher {'data/file1.txt'}
+two {'data/file2.txt'}
+tasks {'data/file1.txt'}
+there {'data/file1.txt'}
+files {'data/file2.txt', 'data/file1.txt'}
+use {'data/file2.txt', 'data/file1.txt'}
+kind {'data/file2.txt', 'data/file1.txt'}
+welldefined {'data/file2.txt', 'data/file1.txt'}
+an {'data/file1.txt', 'data/file2.txt'}
+killed {'data/file2.txt'}
+only {'data/file2.txt', 'data/file1.txt'}
+notes {'data/file2.txt'}
+outputlocation {'data/file1.txt', 'data/file2.txt'}
+configuration {'data/file2.txt', 'data/file1.txt'}
+clusterid {'data/file1.txt', 'data/file2.txt'}
+some {'data/file1.txt', 'data/file2.txt'}
+either {'data/file2.txt', 'data/file1.txt'}
+not {'data/file2.txt', 'data/file1.txt'}
+you {'data/file2.txt', 'data/file1.txt'}
+no {'data/file1.txt', 'data/file2.txt'}
+discussed {'data/file2.txt'}
+interact {'data/file2.txt', 'data/file1.txt'}
+easily {'data/file2.txt'}
+awarded {'data/file2.txt'}
+runmapredinputdata {'data/file2.txt', 'data/file1.txt'}
+cumbersome {'data/file1.txt'}
+location {'data/file1.txt'}
+introduce {'data/file1.txt'}
+regards {'data/file2.txt'}
+get {'data/file1.txt', 'data/file2.txt'}
+IP {'data/file1.txt', 'data/file2.txt'}
+as {'data/file1.txt', 'data/file2.txt'}
+many {'data/file1.txt'}
+MapReduce {'data/file1.txt', 'data/file2.txt'}
+choose {'data/file2.txt'}
+submission {'data/file2.txt'}
+provide {'data/file2.txt'}
+can {'data/file2.txt', 'data/file1.txt'}
+logfile {'data/file2.txt'}
+kind {'data/file1.txt', 'data/file2.txt'}
+parititioning {'data/file2.txt'}
+crucial {'data/file2.txt'}
+you {'data/file2.txt', 'data/file1.txt'}
+in {'data/file2.txt'}
+clear {'data/file2.txt'}
+first {'data/file1.txt'}
+substantial {'data/file2.txt'}
+block {'data/file1.txt'}
+mapfn {'data/file1.txt', 'data/file2.txt'}
+need {'data/file2.txt', 'data/file1.txt'}
+to {'data/file2.txt', 'data/file1.txt'}
+Map {'data/file1.txt'}
+known {'data/file1.txt', 'data/file2.txt'}
+deeply {'data/file2.txt'}
+second {'data/file1.txt'}
+inputdata {'data/file2.txt'}
+multiple {'data/file2.txt'}
+directory {'data/file2.txt'}
+map {'data/file1.txt', 'data/file2.txt'}
+so {'data/file1.txt', 'data/file2.txt'}
+Inverted {'data/file2.txt'}
+convenience {'data/file2.txt'}
+IP {'data/file1.txt', 'data/file2.txt'}
+Deploying {'data/file1.txt'}
+options {'data/file2.txt'}
+that {'data/file2.txt', 'data/file1.txt'}
+implementations {'data/file1.txt'}
+have {'data/file2.txt'}
+manual {'data/file2.txt'}
+level {'data/file1.txt'}
+so {'data/file2.txt', 'data/file1.txt'}
+done {'data/file2.txt'}
+no {'data/file2.txt', 'data/file1.txt'}
+For {'data/file1.txt', 'data/file2.txt'}
+or {'data/file1.txt', 'data/file2.txt'}
+That {'data/file1.txt'}
+mapreduce {'data/file1.txt'}
+config {'data/file1.txt'}
+instance {'data/file1.txt', 'data/file2.txt'}
+and {'data/file1.txt', 'data/file2.txt'}
+deploying {'data/file1.txt'}
+store {'data/file1.txt'}
+For {'data/file2.txt', 'data/file1.txt'}
+reducers {'data/file1.txt'}
+stored {'data/file1.txt'}
+the {'data/file1.txt', 'data/file2.txt'}
+part {'data/file1.txt', 'data/file2.txt'}
+functions {'data/file2.txt'}
+think {'data/file1.txt', 'data/file2.txt'}
+implementation {'data/file2.txt'}
+some {'data/file1.txt', 'data/file2.txt'}
+if {'data/file2.txt'}
+with {'data/file2.txt', 'data/file1.txt'}
+system {'data/file1.txt', 'data/file2.txt'}
+scripts {'data/file2.txt'}
+support {'data/file1.txt', 'data/file2.txt'}
+anything {'data/file2.txt'}
+of {'data/file1.txt', 'data/file2.txt'}
+should {'data/file1.txt', 'data/file2.txt'}
+dynamic {'data/file2.txt'}
+it {'data/file1.txt', 'data/file2.txt'}
+books {'data/file2.txt'}
+output {'data/file2.txt', 'data/file1.txt'}
+any {'data/file2.txt'}
+spawns {'data/file1.txt'}
+Additionally {'data/file2.txt'}
+partitions {'data/file1.txt'}
+read {'data/file2.txt'}
+Data {'data/file1.txt'}
+one {'data/file1.txt'}
+Report {'data/file2.txt'}
+such {'data/file1.txt'}
+functionality {'data/file1.txt'}
+spawn {'data/file1.txt'}
+Nodes {'data/file1.txt'}
+interface {'data/file1.txt', 'data/file2.txt'}
+abstractions {'data/file1.txt'}
+hard {'data/file2.txt'}
+reducefn {'data/file2.txt', 'data/file1.txt'}
+gutenberg {'data/file2.txt'}
+etc {'data/file2.txt'}
+task {'data/file1.txt'}
+processing {'data/file1.txt'}
+master {'data/file2.txt', 'data/file1.txt'}
+compile {'data/file2.txt'}
+As {'data/file2.txt'}
+must {'data/file2.txt', 'data/file1.txt'}
+What {'data/file1.txt'}
+cases {'data/file2.txt'}
+cluster {'data/file1.txt'}
+To {'data/file1.txt'}
+RPCbased {'data/file1.txt'}
+an {'data/file1.txt', 'data/file2.txt'}
+Similarly {'data/file2.txt'}
+controls {'data/file1.txt'}
+facets {'data/file2.txt'}
+OS {'data/file1.txt'}
+work {'data/file1.txt'}
+evaluation {'data/file2.txt'}
+port {'data/file2.txt', 'data/file1.txt'}
+reducefn {'data/file1.txt', 'data/file2.txt'}
+what {'data/file1.txt', 'data/file2.txt'}
+because {'data/file2.txt'}
+Each {'data/file1.txt'}
+nodes {'data/file1.txt'}
+Number {'data/file1.txt'}
+it {'data/file1.txt', 'data/file2.txt'}
+method {'data/file2.txt'}
+Your {'data/file1.txt', 'data/file2.txt'}
+few {'data/file2.txt'}
+component {'data/file2.txt'}
+system {'data/file2.txt', 'data/file1.txt'}
+paths {'data/file2.txt'}
+for {'data/file1.txt', 'data/file2.txt'}
+either {'data/file1.txt', 'data/file2.txt'}
+outputlocation {'data/file1.txt', 'data/file2.txt'}
+server {'data/file2.txt', 'data/file1.txt'}
+better {'data/file2.txt'}
+batch {'data/file1.txt'}
+optional {'data/file2.txt', 'data/file1.txt'}
+not {'data/file1.txt', 'data/file2.txt'}
+events {'data/file2.txt'}
+way {'data/file2.txt'}
+processes {'data/file1.txt'}
+map {'data/file1.txt', 'data/file2.txt'}
+describe {'data/file2.txt'}
+generation {'data/file2.txt'}
+dependencies {'data/file2.txt'}
+components {'data/file1.txt'}
+minimum {'data/file2.txt', 'data/file1.txt'}
+Processes {'data/file1.txt'}
+Serialized {'data/file1.txt'}
+thing {'data/file1.txt', 'data/file2.txt'}
+without {'data/file2.txt'}
+Your {'data/file1.txt', 'data/file2.txt'}
+coordinates {'data/file1.txt'}
+int {'data/file2.txt', 'data/file1.txt'}
+API {'data/file2.txt', 'data/file1.txt'}
+this {'data/file1.txt', 'data/file2.txt'}
+This {'data/file2.txt', 'data/file1.txt'}
+If {'data/file2.txt'}
+soon {'data/file1.txt'}
+Reduce {'data/file1.txt'}
+intermediate {'data/file1.txt'}
+single {'data/file1.txt'}
+Submission {'data/file2.txt'}
+runmapredinputdata {'data/file1.txt', 'data/file2.txt'}
+straight {'data/file2.txt'}
+mapwcpy {'data/file1.txt'}
+other {'data/file1.txt'}
+but {'data/file1.txt'}
+will {'data/file2.txt', 'data/file1.txt'}
+Hadoop {'data/file2.txt'}
+others {'data/file1.txt'}
+fairly {'data/file2.txt'}
+addresses {'data/file1.txt', 'data/file2.txt'}
+able {'data/file2.txt'}
+output {'data/file2.txt', 'data/file1.txt'}
+Note {'data/file2.txt'}
+One {'data/file2.txt'}
+important {'data/file2.txt'}
+help {'data/file2.txt'}
+a {'data/file2.txt', 'data/file1.txt'}
+implements {'data/file1.txt'}
+httpsresearchgooglepubspub {'data/file2.txt'}
+mapfn {'data/file1.txt', 'data/file2.txt'}
+forward {'data/file2.txt'}
+In {'data/file1.txt'}
+project {'data/file2.txt'}
+restarting {'data/file2.txt'}
+simple {'data/file1.txt'}
+at {'data/file2.txt'}
+library {'data/file1.txt'}
+Providing {'data/file2.txt'}
+initclusteripaddress {'data/file2.txt', 'data/file1.txt'}
+network {'data/file1.txt'}
+need {'data/file1.txt', 'data/file2.txt'}
+user {'data/file1.txt', 'data/file2.txt'}
+what {'data/file1.txt', 'data/file2.txt'}
+as {'data/file2.txt', 'data/file1.txt'}
+each {'data/file1.txt'}
+all {'data/file1.txt', 'data/file2.txt'}
+Distributed {'data/file2.txt'}
+This {'data/file1.txt', 'data/file2.txt'}
+implement {'data/file1.txt', 'data/file2.txt'}
+parameters {'data/file1.txt', 'data/file2.txt'}
+locations {'data/file1.txt', 'data/file2.txt'}
+examples {'data/file2.txt'}
+implementing {'data/file1.txt'}
+testcases {'data/file2.txt'}
+mappers {'data/file1.txt'}
+wordcount {'data/file2.txt'}
+these {'data/file2.txt'}
+test {'data/file2.txt'}
+thing {'data/file1.txt', 'data/file2.txt'}
+configuration {'data/file1.txt', 'data/file2.txt'}
+makefile {'data/file2.txt'}
+debugging {'data/file2.txt'}
+archive {'data/file2.txt'}
+we {'data/file2.txt'}
+set {'data/file1.txt'}
+its {'data/file2.txt'}
+assumptions {'data/file2.txt'}
+port {'data/file1.txt', 'data/file2.txt'}
+Use {'data/file2.txt'}
+keyvalue {'data/file1.txt'}
+Avoid {'data/file2.txt'}
+server {'data/file1.txt', 'data/file2.txt'}
+may {'data/file1.txt'}
+datasets {'data/file2.txt'}
+should {'data/file1.txt', 'data/file2.txt'}
+yet {'data/file2.txt'}
+external {'data/file1.txt', 'data/file2.txt'}
+path {'data/file1.txt'}
+We {'data/file2.txt'}
+faulttolerance {'data/file2.txt'}
+file {'data/file1.txt', 'data/file2.txt'}
+Gutenberg {'data/file2.txt'}
+input {'data/file1.txt', 'data/file2.txt'}
+Applications {'data/file2.txt'}
+applications {'data/file1.txt', 'data/file2.txt'}
+correctness {'data/file2.txt'}
+libraries {'data/file2.txt'}
+Implement {'data/file1.txt'}
+is {'data/file2.txt', 'data/file1.txt'}
+survive {'data/file2.txt'}
+the {'data/file1.txt', 'data/file2.txt'}
+implement {'data/file2.txt', 'data/file1.txt'}
+or {'data/file2.txt', 'data/file1.txt'}
+Furthermore {'data/file2.txt'}
+communication {'data/file2.txt', 'data/file1.txt'}
+invertedindex {'data/file2.txt'}
+code {'data/file2.txt', 'data/file1.txt'}
+between {'data/file2.txt'}
+hardcoding {'data/file2.txt'}
+twopart {'data/file1.txt'}
+ip {'data/file2.txt'}
+At {'data/file2.txt', 'data/file1.txt'}
+systems {'data/file2.txt'}
+interventionso {'data/file2.txt'}
+from {'data/file2.txt', 'data/file1.txt'}
+Therefore {'data/file2.txt'}
+be {'data/file2.txt', 'data/file1.txt'}
+HTTP {'data/file2.txt', 'data/file1.txt'}
+understood {'data/file2.txt'}
+expose {'data/file2.txt', 'data/file1.txt'}
+membership {'data/file2.txt'}
+download {'data/file2.txt'}
+support {'data/file2.txt', 'data/file1.txt'}
+compare {'data/file2.txt'}
+clearly {'data/file2.txt'}
+points {'data/file2.txt'}
+The {'data/file1.txt', 'data/file2.txt'}
+get {'data/file1.txt', 'data/file2.txt'}
+about {'data/file1.txt', 'data/file2.txt'}
+and {'data/file1.txt', 'data/file2.txt'}
+please {'data/file2.txt'}
+API {'data/file2.txt', 'data/file1.txt'}
+example {'data/file2.txt'}
+Wordcount {'data/file2.txt'}
+only {'data/file1.txt', 'data/file2.txt'}
+show {'data/file2.txt'}
+parameters {'data/file1.txt', 'data/file2.txt'}
+These {'data/file2.txt'}
+workers {'data/file2.txt'}
+original {'data/file2.txt'}
+HTTP {'data/file1.txt', 'data/file2.txt'}
+documents {'data/file2.txt'}
+document {'data/file2.txt'}
+index {'data/file2.txt'}
+data {'data/file2.txt', 'data/file1.txt'}
+sample {'data/file2.txt'}
+carefully {'data/file2.txt'}
+run {'data/file1.txt', 'data/file2.txt'}
+code {'data/file1.txt', 'data/file2.txt'}
+Or {'data/file2.txt', 'data/file1.txt'}
+through {'data/file2.txt', 'data/file1.txt'}
+they {'data/file2.txt'}
+class {'data/file2.txt'}
+VMs {'data/file1.txt'}
+include {'data/file2.txt'}
+are {'data/file1.txt', 'data/file2.txt'}
+useful {'data/file2.txt'}
+to {'data/file1.txt', 'data/file2.txt'}
+Faulttolerance {'data/file2.txt'}
+reduce {'data/file2.txt'}
+run {'data/file1.txt', 'data/file2.txt'}
+differences {'data/file2.txt'}
+welldefined {'data/file2.txt', 'data/file1.txt'}
+Points {'data/file2.txt'}
+how {'data/file2.txt'}
+It {'data/file2.txt'}
+Otherwise {'data/file2.txt'}
+Reducers Done
+KV Store stopped

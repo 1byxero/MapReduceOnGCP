@@ -1,0 +1,8 @@
+comm_client.py
+file_to_read.txt
+__init__.py
+key_value_store.py
+mapper.py
+mapreduce.py
+start_kv_store.py
+word_count_map_function.py

@@ -1,0 +1,54 @@
+
+2.4 API
+
+The user should only interact with the master node through a well-defined API. You must think about what kind of an API the master should expose. For instance, it can be a long-running HTTP server, and you can interact with it through your web-browser. Or, it can be passed parameters through configuration files whose locations are known.
+
+At a minimum, the master will need to support this external interface:
+
+int cluster_id = init_cluster([(ip-address, port)])
+
+run_mapred(input_data, map_fn, reduce_fn, output_location)
+
+destroy_cluster(cluster_id)
+2.5 Fault-tolerance
+
+This is an optional component.
+
+Your system should be able to survive process failures. You can choose either data replication or restarting the killed process. You can choose a method of convenience to get this done.
+2.6 Applications
+
+The two main applications you must implement are:
+
+    Word-count
+    Inverted index
+
+You can download input datasets from Project Gutenberg.
+2.7 Other implementation notes
+
+Providing a makefile and configuration files and scripts for your project is a must. You will not get any points if we cannot easily compile, run, and test your code.
+
+Similarly, you must provide a few test cases.
+
+Avoid hard-coding anything in your program. This includes IP addresses, port numbers, file-paths, etc. Use command line input parameters, or better yet, use a configuration file. As an example, you can look at the configuration options in Hadoop.
+3 Testing
+
+It is important that you provide multiple test applications for your system. Otherwise, we will have no way of evaluating your submission.
+
+These test cases should be sample MapReduce applications that we have discussed in class. Therefore, you must provide input-data (or input data generation scripts), and the map and reduce functions. We should be able to run these examples without manual intervention—so its crucial to not hardcode any paths or ip addresses.
+
+At a minimum, you must implement the word-count and inverted-index examples. You can use books from the gutenberg archive as documents.
+
+Distributed systems are hard to test for correctness. One thing that can help is to log important events. This log of events is useful for debugging and evaluation, so please include the log output of your sample applications in your submission.
+4 Report
+
+You must clearly document all facets of your design, with regards to: data parititioning, fault-tolerance, and dynamic membership. Furthermore, you must also describe some of the implementation assumptions. You must carefully document all the communication between the master and workers.
+
+Additionally, please read the original MapReduce paper https://research.google/pubs/pub62/ and compare your design and implementation to it. This should be a substantial component of the report, because it will show how deeply you have understood the original MapReduce design and the differences in your implementation.
+
+Note that a minimum working implementation of this assignment is fairly straight forward. Points will be awarded for clear design and implementation.
+5 Submission
+
+Your submission directory should include all source code, dependencies, example applications, sample input data, test-cases, few log-file outputs, and the report.
+
+If you use any libraries, they must be included as part of your submission.
+

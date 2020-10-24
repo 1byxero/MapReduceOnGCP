@@ -1,0 +1,36 @@
+
+
+In this assignment, you will be designing and implementing a distributed MapReduce system. You must write code that implements MapReduce as a "library" that higher level applications can then use for data processing.
+
+This is a two-part assignment. In this part, your code should run on a single machine, with the various map-reduce components implemented as OS processes. In the second part (coming soon!), you will be deploying this as a distributed system on many cloud VMs. Deploying map-reduce on the cloud is the real goal, and the due-date of this assignment is guideline to keep you on track.
+2 What To Implement
+2.1 Processes as nodes
+
+Nodes and tasks are implemented as conventional OS processes. Your application must work on a single OS, as well as on a cluster of machines. Thus, you can only use network-based communication. Each task must communicate with each others through network sockets.
+2.2 Data storage
+
+For all data storage, you should use your simple key-value store from assignment one. That is, the input data, intermediate data, and output data, should all be stored via the key-value store. You may implement and use an RPC-based interface or some other API for your key-value store, but this is entirely optional.
+
+For this assignment, you can implement additional functionality to your key-value store. You will see that the simple set and get interface may be too cumbersome for mapreduce, and you can introduce and implement additional data storage operations and abstractions.
+2.3 Master node
+
+The first thing your program does should be to spawn the master node. The master node then spawns the map and reducer tasks, and controls and coordinates all other processes.
+
+The master gets a path to the input dataset as an input, and it partitions the dataset based on the number of map tasks.
+
+This is a batch application, so there is no user-interaction as such, and the program should not block on user input. The system should accept the following input parameters:
+
+    Input file location
+    Number of mappers and reducers
+    Map and Reduce function : Serialized implementations or file-names (such as map_wc.py).
+    IP addresses and port-numbers (either as a config file or explicit list).
+
+2.4 API
+
+The user should only interact with the master node through a well-defined API. You must think about what kind of an API the master should expose. For instance, it can be a long-running HTTP server, and you can interact with it through your web-browser. Or, it can be passed parameters through configuration files whose locations are known.
+
+At a minimum, the master will need to support this external interface:
+
+int cluster_id = init_cluster([(ip-address, port)])
+
+run_mapred(input_data, map_fn, reduce_fn, output_location
