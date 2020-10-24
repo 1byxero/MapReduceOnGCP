@@ -146,7 +146,7 @@ class Master(object):
 		for ix, ipkeys in enumerate(mapper_ip_key_list):
 			mapper_name = 'mapper-{}'.format(ix)
 			mapper_ip = self.worker_lookup[mapper_name]
-			s = get_xml_rpc_client(mapper_ip, PORT_CONSTANT)
+			s = self.get_xml_rpc_client(mapper_ip, PORT_CONSTANT)
 			num = s.start_mapper(
 				ipkeys, ix, self.reducer_count, 
 				self.kvstore_ip, self.kvstore_port
@@ -163,7 +163,7 @@ class Master(object):
 			wait_for_mappers_to_finish = False
 			for obj in mapper_process_objs:
 				mapper_ip, num = obj
-				s = get_xml_rpc_client(mapper_ip, PORT_CONSTANT)
+				s = self.get_xml_rpc_client(mapper_ip, PORT_CONSTANT)
 				pollval = s.check_if_mapper_done(num)
 				if pollval == False:
 					# process still executing
@@ -175,7 +175,7 @@ class Master(object):
 		for reducer_id in range(self.reducer_count):
 			reducer_name = 'reducer-{}'.format(ix)
 			reducer_ip = self.worker_lookup[reducer_name]
-			s = get_xml_rpc_client(reducer_ip, PORT_CONSTANT)
+			s = self.get_xml_rpc_client(reducer_ip, PORT_CONSTANT)
 			num = s.start_reducer(reducer_id, self.kvstore_ip, self.kvstore_port)
 			reducers_process_objs.append((reducer_ip, num))
 
@@ -190,7 +190,7 @@ class Master(object):
 			wait_for_reducers_to_finish = False
 			for obj in reducers_process_objs:
 				reducer_ip, num = obj
-				s = get_xml_rpc_client(reducer_ip, PORT_CONSTANT)
+				s = self.get_xml_rpc_client(reducer_ip, PORT_CONSTANT)
 				pollval = s.check_if_reducer_done(num)
 				if pollval == False:
 					# process still executing
