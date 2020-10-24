@@ -150,7 +150,7 @@ class Master(object):
 			s = self.get_xml_rpc_client(mapper_ip, PORT_CONSTANT)
 			num = s.start_mapper(
 				ipkeys, ix, self.reducer_count, 
-				self.kvstore_ip, self.kvstore_port
+				mapper_ip, PORT_CONSTANT
 			)
 			mapper_process_objs.append((mapper_ip, num))
 		return mapper_process_objs
@@ -177,7 +177,9 @@ class Master(object):
 			reducer_name = 'reducer-{}'.format(reducer_id)
 			reducer_ip = self.worker_lookup[reducer_name]
 			s = self.get_xml_rpc_client(reducer_ip, PORT_CONSTANT)
-			num = s.start_reducer(reducer_id, self.kvstore_ip, self.kvstore_port)
+			num = s.start_reducer(
+				reducer_id, reducer_ip, PORT_CONSTANT
+			)
 			reducers_process_objs.append((reducer_ip, num))
 
 		return reducers_process_objs
@@ -241,11 +243,6 @@ class Master(object):
 		return start_instances(instance_type, count)
 
 	def get_xml_rpc_client(self, ip, port):
-		return xmlrpc.client.ServerProxy(
-			'http://{}:{}'.format(
-				ip, port
-			)
-		)
 		client_started = False
 		print("Checking if {}:{} is online".format(ip, port))
 		while not client_started:
