@@ -63,7 +63,7 @@ class Master(object):
 			self._wait_on_mappers(mapper_process_objs)
 			reducers_process_objs = self._start_reducers()
 			self._wait_on_reducers(reducers_process_objs)
-			self._remove_mapper_op_folder()		
+			# self._remove_mapper_op_folder()		
 			self._print_map_reduce_output()
 		except:
 			raise

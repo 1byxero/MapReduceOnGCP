@@ -71,6 +71,7 @@ class Mapper(object):
         # read this output file of mapper and store keys in the kvstore
         # pass unique keys back to master?
         self._delete_local_map_fn()
+        self._remove_mapper_op_folder()
 
     def read_output_of_mapper(self):
         words = []
@@ -107,6 +108,15 @@ class Mapper(object):
     def _create_local_map_fn(self, contents):
         with open('mapfn{}.py'.format(self.mapper_number), 'w') as f:
             f.write(contents)
+        os.system('chmod +x mapfn{}.py'.format(self.reducer_number))
+
 
     def _delete_local_map_fn(self):
         os.system('rm mapfn{}.py'.format(self.mapper_number))
+
+    def _remove_mapper_op_folder(self):
+        if os.path.isdir(MAPPEROPFOLDER):
+            for file in os.listdir(MAPPEROPFOLDER):
+                flpth = os.path.join(MAPPEROPFOLDER, file)
+                os.system(f"rm {flpth}")
+            os.system(f"rmdir {MAPPEROPFOLDER}")

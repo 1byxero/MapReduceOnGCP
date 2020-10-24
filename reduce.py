@@ -73,6 +73,7 @@ class Reducer(object):
     def _create_local_reduce_fn(self, contents):
         with open('redfn{}.py'.format(self.reducer_number), 'w') as f:
             f.write(contents)
+        os.system('chmod +x redfn{}.py'.format(self.reducer_number))
 
     def _delete_local_reduce_fn(self):
         os.system('rm redfn{}.py'.format(self.reducer_number))
