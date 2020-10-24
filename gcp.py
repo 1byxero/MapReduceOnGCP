@@ -58,6 +58,7 @@ def create_instance(compute, project, zone, name, bucket, start_script=None):
         'serviceAccounts': [{
             'email': 'default',
             'scopes': [
+                "https://www.googleapis.com/auth/cloud-platform",
                 'https://www.googleapis.com/auth/devstorage.read_write',
                 'https://www.googleapis.com/auth/logging.write'
             ]
@@ -125,12 +126,16 @@ def start_instances(instance_type, count):
     elif instance_type == 'kvstore':
         instance_name = 'kvstore'
         start_script = 'start_kvstore.sh'
+    elif instance_type == 'master':
+        instance_name = 'master'
     else:
         print("Unknown instance type")
         return
 
-    if instance_type == 'kvstore':
-        operation = create_instance(compute, PROJECT, ZONE, instance_name, BUCKET)
+    if instance_type == 'kvstore' or instance_type == 'master':
+        operation = create_instance(
+            compute, PROJECT, ZONE, instance_name, BUCKET, start_script
+        )
         wait_for_operation(compute, PROJECT, ZONE, operation['name'])
     else:
         for i in range(count):
