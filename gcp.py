@@ -176,7 +176,7 @@ def delete_instances(instance_type, count):
     instances = list_instances()
     print(instances)
 
-def get_ip_of_instances(instance_list):
+def get_ip_of_instances():
     lookup = {}
 
     for instance in list_instances():
