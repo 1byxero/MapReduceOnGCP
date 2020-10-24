@@ -39,15 +39,18 @@ class Master(object):
 			mapper_service_port, reducer_service_ip, reducer_service_port,
 		):
 		#get input, mapper function, mapper count, reduce fuction reducer cout 
-		self.kvstore_ip = kvstore_ip
-		self.kvstore_port = kvstore_port
-		self.mapper_service_ip = mapper_service_ip
-		self.mapper_service_port = mapper_service_port
-		self.reducer_service_ip = reducer_service_ip
-		self.reducer_service_port = reducer_service_port
+		# self.kvstore_ip = kvstore_ip
+		# self.kvstore_port = kvstore_port
+		# self.mapper_service_ip = mapper_service_ip
+		# self.mapper_service_port = mapper_service_port
+		# self.reducer_service_ip = reducer_service_ip
+		# self.reducer_service_port = reducer_service_port
 		
 		# self.start_kv_store()
 		# verify kv store started:
+		self.worker_lookup = self.start_workers(KVSTORE_WORKER_TYPE, 1)
+		self.kvstore_ip = self.worker_lookup[KVSTORE_WORKER_TYPE]
+		self.kvstore_port = PORT_CONSTANT
 		self._check_kv_store_rpc_is_up()
 
 		#serialize map function
