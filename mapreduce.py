@@ -173,7 +173,7 @@ class Master(object):
 	def _start_reducers(self):
 		reducers_process_objs = []
 		for reducer_id in range(self.reducer_count):
-			reducer_name = 'reducer-{}'.format(ix)
+			reducer_name = 'reducer-{}'.format(reducer_id)
 			reducer_ip = self.worker_lookup[reducer_name]
 			s = self.get_xml_rpc_client(reducer_ip, PORT_CONSTANT)
 			num = s.start_reducer(reducer_id, self.kvstore_ip, self.kvstore_port)
