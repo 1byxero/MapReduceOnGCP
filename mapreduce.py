@@ -68,14 +68,18 @@ class Master(object):
 			self.worker_lookup = self.start_workers(MAPPER_WORKER_TYPE, self.mapper_count)
 			mapper_process_objs = self._start_mappers(input_file)
 			self._wait_on_mappers(mapper_process_objs)
-			# TODO delete mapper worker types
-			# Start reducers
+			# Start reducers VMs
 			self.worker_lookup = self.start_workers(REDUCER_WORKER_TYPE, self.reducer_count)
+			# Destory Mapper VMs, destroying mappers after reducer works are started gives
+			# reducer vms time to start and be done with the init scripts
+			self.destory_workers(MAPPER_WORKER_TYPE, self.mapper_count) 
 			reducers_process_objs = self._start_reducers()
 			self._wait_on_reducers(reducers_process_objs)
 			# TODO delete reducer workers
 			# self._remove_mapper_op_folder()		
 			self._print_map_reduce_output()
+			self.destory_workers(REDUCER_WORKER_TYPE, self.reducer_count) 
+			self.destory_workers(KVSTORE_WORKER_TYPE, 1) 
 		except:
 			raise
 		finally:
@@ -239,6 +243,9 @@ class Master(object):
 
 	def start_workers(self, instance_type, count):
 		return start_instances(instance_type, count)
+
+	def destory_workers(self, instance_type, count):
+		return delete_instances(instance_type, count)
 
 	def get_xml_rpc_client(self, ip, port):
 		client_started = False
