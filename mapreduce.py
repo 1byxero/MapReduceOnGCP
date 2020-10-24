@@ -67,12 +67,12 @@ class Master(object):
 		self.reduce_function_file = reduce_function_file
 		
 		try:
-			self.worker_lookup = self.start_workers(MAPPER_WORKER_TYPE)
+			self.worker_lookup = self.start_workers(MAPPER_WORKER_TYPE, self.mapper_count)
 			mapper_process_objs = self._start_mappers(input_file)
 			self._wait_on_mappers(mapper_process_objs)
 			# TODO delete mapper worker types
 			# Start reducers
-			self.worker_lookup = self.start_workers(REDUCER_WORKER_TYPE)
+			self.worker_lookup = self.start_workers(REDUCER_WORKER_TYPE, self.reducer_count)
 			reducers_process_objs = self._start_reducers()
 			self._wait_on_reducers(reducers_process_objs)
 			# TODO delete reducer workers
@@ -236,8 +236,8 @@ class Master(object):
 				)
 			)
 
-	def start_workers(self, instance_type):
-		return start_instances(instance_type, self.mapper_count)
+	def start_workers(self, instance_type, count):
+		return start_instances(instance_type, count)
 
 	def get_xml_rpc_client(self, ip, port):
 		return xmlrpc.client.ServerProxy(
