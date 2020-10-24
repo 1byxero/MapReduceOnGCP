@@ -8,8 +8,8 @@ import pickle
 import xmlrpc.client
 
 from subprocess import Popen
-
 from comm_client import Communication_Client
+from gcp import *
 
 # KVPORT = 6055
 # KVSERVER = "127.0.0.1"
@@ -24,6 +24,11 @@ KVSTORE_SPAWN_COMMAND = "./start_kv_store.py {kvstore_ip} {kvstore_port}"
 MAPPER_SPAWN_COMMAND = "./mapper.py {ipkeys} {mapperid} {reducer_count} {map_function_file} {kvstore_ip} {kvstore_port}"
 REDUCER_SPAWN_COMMAND = "./reduce.py {reducer_id} {reduce_function_file} {kvstore_ip} {kvstore_port}"
 MASTER_OP_KEY = 'mapreduce_output'
+PORT_CONSTANT = 8888
+
+MAPPER_WORKER_TYPE = 'mapper'
+REDUCER_WORKER_TYPE = 'reducer'
+KVSTORE_WORKER_TYPE = 'kvstore'
 
 class Master(object):
 
@@ -59,10 +64,15 @@ class Master(object):
 		self.reduce_function_file = reduce_function_file
 		
 		try:
+			self.worker_lookup = self.start_workers(MAPPER_WORKER_TYPE)
 			mapper_process_objs = self._start_mappers(input_file)
 			self._wait_on_mappers(mapper_process_objs)
+			# TODO delete mapper worker types
+			# Start reducers
+			self.worker_lookup = self.start_workers(REDUCER_WORKER_TYPE)
 			reducers_process_objs = self._start_reducers()
 			self._wait_on_reducers(reducers_process_objs)
+			# TODO delete reducer workers
 			# self._remove_mapper_op_folder()		
 			self._print_map_reduce_output()
 		except:
@@ -129,35 +139,29 @@ class Master(object):
 				sock.handle_set(mapper_ip_key, item)
 			mapper_ip_key_list.append(mapper_ip_key)
 
-		s = xmlrpc.client.ServerProxy(
-			'http://{}:{}'.format(
-				self.mapper_service_ip, self.mapper_service_port
-			)
-		)		
-
 		mapper_process_objs = []
 		for ix, ipkeys in enumerate(mapper_ip_key_list):
+			mapper_name = 'mapper-{}'.format(ix)
+			mapper_ip = self.worker_lookup[mapper_name]
+			s = get_xml_rpc_client(mapper_ip, PORT_CONSTANT)
 			num = s.start_mapper(
 				ipkeys, ix, self.reducer_count, 
 				self.kvstore_ip, self.kvstore_port
 			)
-			mapper_process_objs.append(num)
+			mapper_process_objs.append((mapper_ip, num))
 		return mapper_process_objs
 
 	def _wait_on_mappers(self, mapper_process_objs):
 		wait_for_mappers_to_finish = True
 		print("wait_for_mappers_to_finish")
-		s = xmlrpc.client.ServerProxy(
-			'http://{}:{}'.format(
-				self.mapper_service_ip, self.mapper_service_port
-			)
-		)
 		while wait_for_mappers_to_finish:
 			# saving some cpu cycles by using sleep
 			time.sleep(5)
 			wait_for_mappers_to_finish = False
 			for obj in mapper_process_objs:
-				pollval = s.check_if_mapper_done(obj)
+				mapper_ip, num = obj
+				s = get_xml_rpc_client(mapper_ip, PORT_CONSTANT)
+				pollval = s.check_if_mapper_done(num)
 				if pollval == False:
 					# process still executing
 					wait_for_mappers_to_finish = True
@@ -166,30 +170,25 @@ class Master(object):
 	def _start_reducers(self):
 		reducers_process_objs = []
 		for reducer_id in range(self.reducer_count):
-			s = xmlrpc.client.ServerProxy(
-				'http://{}:{}'.format(
-					self.reducer_service_ip, self.reducer_service_port
-				)
-			)
-			p = s.start_reducer(reducer_id, self.kvstore_ip, self.kvstore_port)
-			reducers_process_objs.append(p)
+			reducer_name = 'reducer-{}'.format(ix)
+			reducer_ip = self.worker_lookup[reducer_name]
+			s = get_xml_rpc_client(reducer_ip, PORT_CONSTANT)
+			num = s.start_reducer(reducer_id, self.kvstore_ip, self.kvstore_port)
+			reducers_process_objs.append((reducer_ip, num))
 
 		return reducers_process_objs
 
 	def _wait_on_reducers(self, reducers_process_objs):
 		wait_for_reducers_to_finish = True
 		print("wait_for_reducers_to_finish")
-		s = xmlrpc.client.ServerProxy(
-			'http://{}:{}'.format(
-				self.reducer_service_ip, self.reducer_service_port
-			)
-		)
 		while wait_for_reducers_to_finish:
 			# saving some cpu cycles using sleep
 			time.sleep(5)
 			wait_for_reducers_to_finish = False
 			for obj in reducers_process_objs:
-				pollval = s.check_if_reducer_done(obj)
+				reducer_ip, num = obj
+				s = get_xml_rpc_client(reducer_ip, PORT_CONSTANT)
+				pollval = s.check_if_reducer_done(num)
 				if pollval == False:
 					# process still executing
 					wait_for_reducers_to_finish = True
@@ -233,6 +232,18 @@ class Master(object):
 					key.replace('reducer_op_for_', ''), value
 				)
 			)
+
+	def start_workers(self, instance_type):
+		return start_instances(instance_type, self.mapper_count)
+
+	def get_xml_rpc_client(self, ip, port):
+		return xmlrpc.client.ServerProxy(
+			'http://{}:{}'.format(
+				ip, port
+			)
+		)
+
+
 
 
 parser = argparse.ArgumentParser()
