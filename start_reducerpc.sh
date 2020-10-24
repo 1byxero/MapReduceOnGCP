@@ -2,7 +2,7 @@
 
 sudo apt update
 sudo apt install python3-pip
-pip3 install google-api-python-client
+yes | pip3 install google-api-python-client
 cd /home/anuj/
 rm -rf MapReduceOnGCP
 git clone https://github.com/1byxero/MapReduceOnGCP.git
